@@ -1,0 +1,12 @@
+[package]
+name = "twitch-serv"
+version = "0.1.0"
+authors = ["Anthony Anderson <anderson@mdhs.info>"]
+workspace = "../"
+
+[dependencies]
+irc = "0.13.4"
+libchatserv = { path = "../libchatserv"}
+
+[build]
+target-dir = "../build"
