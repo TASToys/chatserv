@@ -1,6 +1,7 @@
 extern crate libchatserv;
 
 mod TwitchBot;
+mod tutil;
 
 use libchatserv::bot::ChatBot;
 
