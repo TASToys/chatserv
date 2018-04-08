@@ -16,7 +16,7 @@ pub struct NatsConf {
 
 fn dump_default_conf() {
 
-    let path = Path::new("config.yml");
+    let path = Path::new("nats.yml");
     let conf = NatsConf { name: "inst".to_string(), user:"user".to_string(), port: 4244,
         password:"pass".to_string() };
 
@@ -30,25 +30,24 @@ fn dump_default_conf() {
 
         match file.write_all(serial.as_bytes()) {
             Err(why) => {
-                panic!("couldn't write into {}!")
+                panic!("couldn't write into {}!", path.display())
             },
             Ok(_) => println!("created defualt config")
         }
     }
 }
 
-impl NatsConf {
+ impl NatsConf {
 
     pub fn new() -> NatsConf {
         dump_default_conf();
 
-        let path = Path::new("config.yml");
+        let path = Path::new("nats.yml");
         let mut file = File::open(&path).expect("unable to open config.yml");
         let mut f2s = String::new();
         file.read_to_string(&mut f2s).expect("somthing when wrong reading file");
 
         let dec: NatsConf = serde_yaml::from_str(&f2s).unwrap();
-
         return dec;
     }
 }

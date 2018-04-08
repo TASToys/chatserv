@@ -2,7 +2,6 @@
 extern crate serde_derive;
 extern crate nats;
 
-pub mod fmt;
 pub mod bot;
 pub mod util;
 

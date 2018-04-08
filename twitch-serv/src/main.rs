@@ -1,14 +1,16 @@
 extern crate libchatserv;
+extern crate serde_derive;
 
-mod TwitchBot;
-mod tutil;
+mod twitch;
 
 use libchatserv::bot::ChatBot;
 
-use TwitchBot::IrcBot;
-
+//use
 fn main() {
     println!("Hello, world!");
-
+    twitch::TwitchBot::connect_to_twitch();
 //    let twit: ChatBot;
+//    let twit = IrcCfg;
+
+
 }

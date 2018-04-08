@@ -5,8 +5,13 @@ authors = ["Anthony Anderson <anderson@mdhs.info>"]
 workspace = "../"
 
 [dependencies]
-irc = "0.13.4"
+tungstenite = "0.5.3"
+mio = "0.6.14"
+serde_derive = "1.0"
+serde_yaml = "0.7"
 libchatserv = { path = "../libchatserv"}
+url = "1.5.1"
+ttfmt = { git = "https://github.com/TASToys/ttfmt.git" }
 
 [build]
 target-dir = "../build"
