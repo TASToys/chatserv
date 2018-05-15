@@ -1,4 +1,6 @@
 extern crate libchatserv;
+
+#[macro_use]
 extern crate serde_derive;
 
 mod twitch;
